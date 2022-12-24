@@ -83,11 +83,11 @@ impl State {
 
     fn input(&mut self, event: &WindowEvent) -> bool {
         match event {
-            WindowEvent::CursorMoved{device_id, position, modifiers} => {
+            WindowEvent::CursorMoved{device_id: _, position, modifiers: _ } => {
                 self.background = wgpu::Color{
                     r: position.x / self.size.width as f64,
                     g: position.y / self.size.height as f64,
-                    b: 0.1,
+                    b: 0.5,
                     a: 1.0,
                 };
                 self.dirty = true;
